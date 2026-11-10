@@ -1,0 +1,816 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background: radial-gradient(circle at 15% 50%, rgba(76, 29, 149, 0.4), transparent 30%),
+              radial-gradient(circle at 85% 30%, rgba(2, 132, 199, 0.3), transparent 30%),
+              #060814; 
+  color: #e2e8f0;
+  min-height: 100vh;
+}
+
+.directory-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.directory-title {
+  font-size: 32px;
+  color: #38bdf8;
+  text-shadow: 0 0 15px rgba(56, 189, 248, 0.5);
+  margin-bottom: 30px;
+}
+
+.stats-bar {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 600px;
+  margin: 0 auto 30px auto;
+}
+
+.stat-box {
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(168, 85, 247, 0.3);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.1);
+}
+
+.stat-num {
+  font-size: 32px;
+  font-weight: 800;
+  color: #38bdf8;
+}
+
+.stat-num.online {
+  color: #4ade80;
+  text-shadow: 0 0 10px rgba(74, 222, 128, 0.5);
+}
+
+.stat-num.offline {
+  color: #c084fc;
+  text-shadow: 0 0 10px rgba(192, 132, 252, 0.5);
+}
+
+.stat-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #94a3b8;
+  margin-top: 5px;
+}
+
+.search-input {
+  width: 100%;
+  max-width: 500px;
+  padding: 14px 20px;
+  background: rgba(2, 6, 23, 0.8);
+  border: 1.5px solid #4c1d95;
+  border-radius: 12px;
+  color: #fff;
+  font-size: 16px;
+  margin-bottom: 40px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.search-input::placeholder {
+  color: #64748b;
+}
+
+.search-input:focus {
+  border-color: #38bdf8;
+  box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.team-card {
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(168, 85, 247, 0.3);
+  border-radius: 20px;
+  padding: 25px;
+  text-align: center;
+  box-shadow: 0 0 25px rgba(139, 92, 246, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(139, 92, 246, 0.3);
+}
+
+.card-avatar {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #38bdf8; /* Border Cyan */
+  box-shadow: 0 0 15px rgba(56, 189, 248, 0.5);
+  margin-bottom: 15px;
+}
+
+.card-name {
+  font-size: 20px;
+  color: #f8fafc;
+  margin: 0 0 5px 0;
+}
+
+.card-role {
+  font-size: 14px;
+  color: #94a3b8;
+  margin: 0 0 15px 0;
+}
+
+.card-badges {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.badge {
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.badge-online {
+  background: rgba(74, 222, 128, 0.15);
+  color: #4ade80;
+  border: 1px solid rgba(74, 222, 128, 0.3);
+}
+
+.badge-offline {
+  background: rgba(148, 163, 184, 0.15);
+  color: #94a3b8;
+  border: 1px solid rgba(148, 163, 184, 0.3);
+}
+
+.badge-stars {
+  background: rgba(245, 158, 11, 0.15);
+  color: #fbbf24; /* Kuning Emas */
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.card-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-star {
+  background: transparent;
+  border: 1px solid #fbbf24;
+  color: #fbbf24;
+}
+
+.btn-star:hover {
+  background: rgba(245, 158, 11, 0.2);
+  box-shadow: 0 0 15px rgba(245, 158, 11, 0.4);
+}
+
+.btn-status-toggle {
+  background: linear-gradient(135deg, #7c3aed, #2563eb);
+  border: none;
+  color: white;
+  box-shadow: 0 4px 15px rgba(124, 58, 237, 0.4);
+}
+
+.btn-status-toggle:hover {
+  background: linear-gradient(135deg, #6d28d9, #1d4ed8);
+  box-shadow: 0 6px 20px rgba(124, 58, 237, 0.7);
+}
+
+.empty-state {
+  grid-column: 1 / -1;
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px dashed #7c3aed;
+  border-radius: 12px;
+  padding: 40px;
+  color: #c084fc;
+  font-weight: 600;
+}
+
+/* --- FORM TAMBAH MEMBER (CYBER THEME) --- */
+.add-member-form {
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(168, 85, 247, 0.3);
+  border-radius: 16px;
+  padding: 20px 24px;
+  margin-bottom: 30px;
+  box-shadow: 0 0 25px rgba(139, 92, 246, 0.1);
+}
+
+.form-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  text-align: left;
+  color: #38bdf8; /* Cyan */
+  text-shadow: 0 0 10px rgba(56, 189, 248, 0.4);
+}
+
+/* Grid untuk 5 kolom (4 input + 1 tombol) */
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr) auto;
+  gap: 14px;
+  align-items: start; /* Agar error text tidak menggeser layout */
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  text-align: left;
+}
+
+.form-group label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #c084fc; /* Ungu Neon */
+}
+
+/* Desain Input & Select */
+.form-group input, 
+.form-group select {
+  padding: 10px 14px;
+  background: rgba(2, 6, 23, 0.8);
+  border: 1.5px solid #4c1d95;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 14px;
+  font-family: 'Poppins', sans-serif;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.form-group input::placeholder {
+  color: #475569;
+}
+
+.form-group input:focus, 
+.form-group select:focus {
+  border-color: #38bdf8; /* Cyan */
+  box-shadow: 0 0 10px rgba(56, 189, 248, 0.4);
+}
+
+/* Desain Tombol Submit */
+.btn-submit {
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #7c3aed, #2563eb);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 24px; /* Menyeimbangkan tinggi dengan input */
+  white-space: nowrap;
+}
+
+.btn-submit:hover {
+  box-shadow: 0 0 15px rgba(124, 58, 237, 0.6);
+  transform: translateY(-2px);
+}
+
+/* --- STYLE ERROR ZOD --- */
+.input-error {
+  border-color: #ef4444 !important; /* Merah */
+  background: rgba(239, 68, 68, 0.1) !important;
+  box-shadow: 0 0 10px rgba(239, 68, 68, 0.3) !important;
+}
+
+.error-text {
+  color: #f87171;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: left;
+  margin-top: 2px;
+}
+
+/* --- TAMBAHAN STYLE BIO DI KARTU --- */
+.card-bio {
+  font-size: 13px;
+  font-style: italic;
+  color: #cbd5e1;
+  margin: -5px 0 15px 0;
+  line-height: 1.4;
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 900px) {
+  .form-row {
+    grid-template-columns: 1fr 1fr; /* 2 kolom di tablet */
+  }
+}
+
+@media (max-width: 600px) {
+  .form-row {
+    grid-template-columns: 1fr; /* 1 kolom di HP */
+  }
+}
+
+/* --- LAYOUT UTAMA & TAB BAR --- */
+.app-layout {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px 20px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.main-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.main-header h1 {
+  color: #38bdf8;
+  font-size: 32px;
+  margin-bottom: 10px;
+  text-shadow: 0 0 15px rgba(56, 189, 248, 0.5);
+}
+
+.main-header p {
+  color: #94a3b8;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.tab-bar {
+  display: inline-flex;
+  gap: 10px;
+  background: rgba(15, 23, 42, 0.8);
+  padding: 8px;
+  border-radius: 16px;
+  border: 1px solid rgba(168, 85, 247, 0.3);
+}
+
+.tab-btn {
+  padding: 12px 24px;
+  border: none;
+  background: transparent;
+  color: #94a3b8;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tab-btn:hover {
+  color: #e2e8f0;
+}
+
+.tab-btn.active {
+  background: linear-gradient(135deg, #7c3aed, #2563eb);
+  color: white;
+  box-shadow: 0 4px 15px rgba(124, 58, 237, 0.4);
+}
+
+/* --- NEWS TOOLBAR & SOURCE SWITCHER --- */
+.news-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(168, 85, 247, 0.2);
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.news-toolbar h2 {
+  color: #c084fc;
+  margin: 0 0 5px 0;
+}
+
+.news-toolbar p {
+  color: #64748b;
+  font-size: 14px;
+  margin: 0;
+}
+
+.toolbar-actions {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.source-switcher {
+  display: flex;
+  background: rgba(15, 23, 42, 0.8);
+  border-radius: 10px;
+  padding: 4px;
+  border: 1px solid rgba(168, 85, 247, 0.3);
+}
+
+.source-btn {
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.source-btn.active {
+  background: #38bdf8; /* Cyan untuk Kompas */
+  color: #0f172a;
+}
+
+.source-btn.cnn.active {
+  background: #ef4444; /* Merah untuk CNN */
+  color: white;
+}
+
+.btn-refresh {
+  background: linear-gradient(135deg, #7c3aed, #2563eb);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-refresh:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* --- SPINNER & ERROR BANNER --- */
+.spinner-box {
+  text-align: center;
+  padding: 50px;
+  color: #94a3b8;
+}
+
+.css-spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid rgba(168, 85, 247, 0.2);
+  border-top-color: #38bdf8;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 20px auto;
+  box-shadow: 0 0 15px rgba(56, 189, 248, 0.3);
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.error-banner {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid #ef4444;
+  color: #f87171;
+  padding: 25px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.error-banner button {
+  margin-top: 15px;
+  background: #ef4444;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* --- NEWS GRID & CARD --- */
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 25px;
+}
+
+.news-card {
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(168, 85, 247, 0.3);
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.news-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(139, 92, 246, 0.3);
+}
+
+.news-thumb-wrapper {
+  position: relative;
+  width: 100%;
+  height: 180px;
+  background: #0f172a;
+}
+
+.news-thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.news-category-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  background: rgba(56, 189, 248, 0.9);
+  color: #0f172a;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  box-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
+}
+
+.news-body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.news-headline {
+  font-size: 16px;
+  color: #f8fafc;
+  margin: 0 0 15px 0;
+  line-height: 1.5;
+}
+
+.news-meta {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  color: #94a3b8;
+}
+
+.news-link {
+  color: #38bdf8;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.news-link:hover {
+  text-decoration: underline;
+}
+
+/* --- NAVBAR CYBER --- */
+.app-layout {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(168, 85, 247, 0.4);
+  padding: 15px 30px;
+  border-radius: 16px;
+  margin-bottom: 30px;
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.15);
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #f8fafc;
+}
+
+.brand-icon { color: #fbbf24; text-shadow: 0 0 10px #fbbf24; }
+
+.navbar-menu {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #94a3b8;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #e2e8f0;
+}
+
+.nav-link.active {
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.1);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  box-shadow: 0 0 15px rgba(56, 189, 248, 0.2);
+}
+
+.badge-count {
+  background: rgba(168, 85, 247, 0.2);
+  color: #c084fc;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 700;
+  border: 1px solid rgba(168, 85, 247, 0.4);
+}
+
+/* --- SEARCH BAR UPDATE --- */
+.search-bar {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.filter-btn {
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid #4c1d95;
+  color: #c084fc;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+}
+
+.filter-btn.active {
+  background: #7c3aed;
+  color: white;
+  box-shadow: 0 0 15px rgba(124, 58, 237, 0.5);
+}
+
+/* --- TOMBOL LIHAT PROFIL DI KARTU --- */
+.btn-view-profile {
+  display: block;
+  text-align: center;
+  background: rgba(56, 189, 248, 0.1);
+  color: #38bdf8;
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  padding: 10px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 13px;
+  margin-top: 15px;
+  transition: all 0.3s ease;
+}
+
+.btn-view-profile:hover {
+  background: rgba(56, 189, 248, 0.2);
+  box-shadow: 0 0 10px rgba(56, 189, 248, 0.4);
+}
+
+/* --- HALAMAN DETAIL PROFIL --- */
+.profile-detail-container {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.btn-back {
+  display: inline-block;
+  margin-bottom: 20px;
+  color: #38bdf8;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.btn-back:hover { text-decoration: underline; }
+
+.profile-card {
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(168, 85, 247, 0.3);
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 0 30px rgba(139, 92, 246, 0.15);
+}
+
+.avatar-large {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #38bdf8;
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.6);
+  margin-bottom: 20px;
+}
+
+.profile-card h2 {
+  color: #f8fafc;
+  font-size: 28px;
+  margin: 0 0 5px 0;
+}
+
+.profile-role {
+  color: #c084fc;
+  font-size: 16px;
+  margin: 0 0 20px 0;
+}
+
+.profile-email {
+  color: #94a3b8;
+  font-size: 14px;
+  margin: 20px 0 10px 0;
+}
+
+.profile-bio {
+  color: #cbd5e1;
+  font-style: italic;
+  margin-bottom: 20px;
+}
+
+.profile-stars {
+  background: rgba(245, 158, 11, 0.15);
+  color: #fbbf24;
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-weight: 700;
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+/* --- HALAMAN 404 NOT FOUND --- */
+.not-found-container {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.not-found-code {
+  font-size: 100px;
+  font-weight: 900;
+  color: #a855f7;
+  text-shadow: 0 0 30px rgba(168, 85, 247, 0.6);
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+.not-found-container h2 {
+  color: #f8fafc;
+  margin-bottom: 10px;
+}
+
+.not-found-container p {
+  color: #94a3b8;
+  margin-bottom: 30px;
+}
+
+.btn-primary {
+  display: inline-block;
+  background: linear-gradient(135deg, #7c3aed, #2563eb);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(124, 58, 237, 0.4);
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(124, 58, 237, 0.7);
+}
