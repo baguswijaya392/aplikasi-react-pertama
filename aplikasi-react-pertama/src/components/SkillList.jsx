@@ -1,4 +1,4 @@
-function SkillList() {
+﻿function SkillList() {
   const skills = ['HTML & CSS', 'JavaScript Modern', 'React JS', 'Node.js'];
 
   return (

@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import TeamPage from './pages/TeamPage';
+import BarangPage from './pages/BarangPage';
 import NewsPage from './pages/NewsPage';
 import MemberDetailPage from './pages/MemberDetailPage';
 import NotFoundPage from './pages/NotFoundPage';
@@ -62,6 +63,9 @@ export default function App() {
               />
             } 
           />
+
+          {/* Rute Data Barang */}
+          <Route path="/barang" element={<BarangPage />} />
           
           {/* Rute Berita */}
           <Route path="/news" element={<NewsPage />} />

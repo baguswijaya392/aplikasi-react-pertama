@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+﻿import { Link } from 'react-router-dom';
 
 // Perhatikan: Menerima 1 objek 'member' dan fungsi 'onToggle', 'onGiveStar'
 export default function TeamCard({ member, onToggle, onGiveStar }) {

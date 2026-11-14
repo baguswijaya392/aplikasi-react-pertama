@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 
 export default function NewsCard({ title, image, category, date, link }) {
   // Gambar cadangan jika URL gambar dari API rusak/kosong

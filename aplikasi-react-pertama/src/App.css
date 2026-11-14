@@ -814,3 +814,244 @@ button {
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(124, 58, 237, 0.7);
 }
+
+/* --- DATA BARANG (CYBER THEME) --- */
+.barang-form-row {
+  display: grid;
+  grid-template-columns: 2fr 1.5fr 1fr auto;
+  gap: 14px;
+  align-items: start;
+}
+
+.form-actions-inline {
+  display: flex;
+  gap: 10px;
+  align-items: flex-end;
+  margin-top: 24px;
+}
+
+.form-actions-inline .btn-submit {
+  margin-top: 0;
+  width: auto;
+}
+
+.btn-cancel {
+  padding: 10px 18px;
+  background: rgba(148, 163, 184, 0.15);
+  color: #cbd5e1;
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  border-radius: 8px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.btn-cancel:hover {
+  background: rgba(148, 163, 184, 0.3);
+  color: #fff;
+}
+
+.barang-table-wrapper {
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(168, 85, 247, 0.3);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 0 25px rgba(139, 92, 246, 0.1);
+  margin-top: 20px;
+}
+
+.barang-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.barang-table thead {
+  background: rgba(2, 6, 23, 0.9);
+  border-bottom: 2px solid rgba(168, 85, 247, 0.3);
+}
+
+.barang-table th {
+  padding: 16px 20px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #38bdf8;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.barang-table td {
+  padding: 14px 20px;
+  border-bottom: 1px solid rgba(168, 85, 247, 0.15);
+  color: #e2e8f0;
+  font-size: 14px;
+  vertical-align: middle;
+}
+
+.barang-table tbody tr {
+  transition: background 0.2s ease;
+}
+
+.barang-table tbody tr:hover {
+  background: rgba(124, 58, 237, 0.1);
+}
+
+.barang-table tbody tr.row-editing {
+  background: rgba(56, 189, 248, 0.12);
+  border-left: 4px solid #38bdf8;
+}
+
+.barang-name {
+  font-weight: 600;
+  color: #f8fafc;
+}
+
+.badge-kategori {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  background: rgba(56, 189, 248, 0.15);
+  color: #38bdf8;
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  box-shadow: 0 0 8px rgba(56, 189, 248, 0.2);
+}
+
+.stok-badge {
+  font-weight: 700;
+  font-size: 15px;
+  color: #4ade80;
+}
+
+.stok-badge.habis {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 8px;
+  font-size: 12px;
+  background: rgba(239, 68, 68, 0.2);
+  color: #f87171;
+  border: 1px solid rgba(239, 68, 68, 0.4);
+}
+
+.table-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.btn-table-edit {
+  width: auto;
+  padding: 6px 14px;
+  background: rgba(245, 158, 11, 0.1);
+  color: #fbbf24;
+  border: 1px solid #fbbf24;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-table-edit:hover {
+  background: rgba(245, 158, 11, 0.25);
+  box-shadow: 0 0 10px rgba(245, 158, 11, 0.4);
+}
+
+.btn-table-delete {
+  width: auto;
+  padding: 6px 14px;
+  background: rgba(239, 68, 68, 0.1);
+  color: #f87171;
+  border: 1px solid #ef4444;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-table-delete:hover {
+  background: rgba(239, 68, 68, 0.25);
+  box-shadow: 0 0 10px rgba(239, 68, 68, 0.4);
+}
+
+.toast-notice {
+  position: fixed;
+  right: 25px;
+  top: 25px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  max-width: 380px;
+  padding: 14px 20px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  backdrop-filter: blur(14px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  animation: slideIn 0.3s ease;
+}
+
+.toast-notice.success {
+  background: rgba(15, 23, 42, 0.95);
+  border: 1px solid #4ade80;
+  color: #4ade80;
+  box-shadow: 0 0 20px rgba(74, 222, 128, 0.3);
+}
+
+.toast-notice.error {
+  background: rgba(15, 23, 42, 0.95);
+  border: 1px solid #ef4444;
+  color: #f87171;
+  box-shadow: 0 0 20px rgba(239, 68, 68, 0.3);
+}
+
+.toast-close {
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0 0 0 10px;
+  width: auto;
+}
+
+.toast-close:hover {
+  color: #fff;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 900px) {
+  .barang-form-row {
+    grid-template-columns: 1fr 1fr;
+  }
+  .form-actions-inline {
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  .barang-form-row {
+    grid-template-columns: 1fr;
+  }
+  .barang-table {
+    display: block;
+    overflow-x: auto;
+  }
+}
